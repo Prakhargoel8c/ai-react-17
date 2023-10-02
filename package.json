@@ -51,5 +51,6 @@
     "singleQuote": true,
     "arrowParens": "avoid",
     "trailingComma": "all"
-  }
+  },
+  "version": "1.0.0"
 }
