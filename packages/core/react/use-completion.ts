@@ -67,7 +67,7 @@ export function useCompletion({
   onError,
 }: UseCompletionOptions = {}): UseCompletionHelpers {
   // Generate an unique id for the completion if not provided.
-  const hookId = nanoid();
+  const [hookId] = useState(nanoid());
   const completionId = id || hookId;
 
   // Store the completion state in SWR, using the completionId as the key to share states.

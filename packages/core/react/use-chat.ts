@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import useSWR, { KeyedMutator } from 'swr';
 import { nanoid, createChunkDecoder, COMPLEX_HEADER } from '../shared/utils';
 
@@ -348,7 +348,7 @@ export function useChat({
   body,
 }: UseChatOptions = {}): UseChatHelpers {
   // Generate a unique id for the chat if not provided.
-  const hookId = useId();
+  const [hookId] = useState(nanoid());
   const chatId = id || hookId;
 
   // Store the chat state in SWR, using the chatId as the key to share states.
